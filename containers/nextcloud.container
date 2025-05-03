@@ -3,7 +3,7 @@ Description=Nextcloud container
 
 [Container]
 ContainerName=nextcloud
-Image=docker.io/library/nextcloud:fpm-alpine
+Image=docker.io/library/nextcloud:apache
 Pod=nextcloud.pod
 Label=io.containers.autoupdate=registry
 Volume=${HOME}/html:/var/www/html:z  # change if necessary
