@@ -1,16 +1,16 @@
 # Nextcloud for Podman
 
-Quadlet files for setting up Nextcloud in Podman, using the `fpm-alpine` image from [Docker Hub](https://hub.docker.com/_/nextcloud/)
+Quadlet files for setting up Nextcloud with the Caddy webserver in Podman, using the `fpm-alpine` image from [Docker Hub](https://hub.docker.com/_/nextcloud/)
 
 There is some manual configuration required, like setting database passwords and mounting disks
 
-I run these containers as a seperate Nextcloud user, so I've named the containers accordingly. When also running other containers as the same user I recommend to prefix the names (like `nextcloud-mariadb.container`)
+I run these containers as a seperate Nextcloud user, so the containers are named accordingly. When also running other containers as the same user it's recommended to prefix the names (like `nextcloud-mariadb.container`)
 
 ## Setup
 
 1. Go through the container files and add passwords at the corresponding environment variables and change the volume paths where you want your data to be mounted
 
-2. Create the necessary directories, in its default configuration `mkdir ~/{caddy,data,db,html}`
+2. Create the necessary directories, in its default configuration run `mkdir ~/{caddy,data,db,html}`
 
 3. Place the [Caddyfile](./caddy/Caddyfile) in the created `caddy` directory and create an  empty subdirectory called `caddy_data` as mountpoint for caddy.
 
