@@ -1,1 +1,7 @@
-*.{container,pod,kube,network,volume,build,image} linguist-language=Ini
+*.container linguist-language=Ini
+*.pod linguist-language=Ini
+*.kube linguist-language=Ini
+*.network linguist-language=Ini
+*.volume linguist-language=Ini
+*.build linguist-language=Ini
+*.image linguist-language=Ini
