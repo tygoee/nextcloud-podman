@@ -8,6 +8,17 @@ Feel free to contribute if you wrote a better implementation, some things like p
 
 - Nextcloud (Apache) [View ↗](./nextcloud-apache)
 - Nextcloud (Caddy) [View ↗](./nextcloud-caddy)
+- Technitium [View ↗](./technitium-dns)
+
+## Fixing Quadlet errors
+
+When quadlets aren't showing up in systemd, it's possible to show the errors by doing a dry run:
+
+```sh
+/usr/libexec/podman/quadlet -dryrun -user
+```
+
+Omit `-user` when parsing rootful services
 
 ## Quadlet documentation
 

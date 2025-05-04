@@ -1,0 +1,22 @@
+[Unit]
+Description=Technitium DNS Server container
+
+[Container]
+ContainerName=dns-server
+Image=docker.io/technitium/dns-server:latest
+Label=io.containers.autoupdate=registry
+Volume=/etc/localtime:/etc/localtime:ro
+Volume=${HOME}/dns:/etc/dns:rw,Z
+PublishPort=5380:5380
+PublishPort=1053:53/tcp
+PublishPort=1053:53/udp
+Environment=DNS_SERVER_DOMAIN=dns-server
+PodmanArgs=--hostname dns-server
+
+[Service]
+Restart=on-failure
+TimeoutStartSec=90
+TimeoutStopSec=30
+
+[Install]
+WantedBy=default.target
