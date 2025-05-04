@@ -1,0 +1,15 @@
+[Unit]
+Description=Valkey container for Nextcloud
+
+[Container]
+ContainerName=valkey
+Image=docker.io/valkey/valkey:alpine
+Pod=nextcloud.pod
+Label=io.containers.autoupdate=registry
+Exec=redis-server --requirepass password_here
+
+[Service]
+Restart=on-failure
+
+[Install]
+WantedBy=default.target

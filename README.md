@@ -1,27 +1,20 @@
-# Nextcloud for Podman
+# Quadlets
 
-Quadlet files for setting up Nextcloud with the Apache webserver in Podman, using the `apache` image from [Docker Hub](https://hub.docker.com/_/nextcloud/)
+Collection with some of my Quadlet configuration files, or modifications of configurations found on the internet. 
 
-There is some manual configuration required, like setting database passwords and mounting disks
+Feel free to contribute if you wrote a better implementation, some things like podman secrets may not have been added yet.
 
-I run these containers as a seperate Nextcloud user, so the containers are named accordingly. When also running other containers as the same user it's recommended to prefix the names (like `nextcloud-mariadb.container`)
+## List of containers
 
-## Setup
+- Nextcloud (Apache) [View ↗](./nextcloud-apache)
+- Nextcloud (Caddy) [View ↗](./nextcloud-caddy)
 
-1. Go through the container files and add passwords at the corresponding environment variables and change the volume paths where you want your data to be mounted
-
-2. Create the necessary directories, in its default configuration run `mkdir ~/{data,db,html}`
-
-3. Place all files from the [containers](./containers) directory in `~/.config/containers/systemd` (or the corresponding [system directory](https://docs.podman.io/en/latest/markdown/podman-systemd.unit.5.html#podman-rootful-unit-search-path) when running rootful)
-
-4. Reload the systemd daemon with `systemd --user daemon-reload`
-
-5. Start the nextcloud-pod service by running `systemd --user start nextcloud-pod.service`
-
-After adding port `5080/tcp` it to your firewall configuration, you now have a running Nextcloud container on port 5080. It will automatically start on every boot from now on.
-
-## Sources
-
-[Tutorial for running Nextcloud in rootless Podman with mariadb, redis, caddy webserver - Nextcloud community](https://help.nextcloud.com/t/tutorial-for-running-nextcloud-in-rootless-podman-with-mariadb-redis-caddy-webserver-all-behind-a-caddy-reverse-proxy/159216)
+## Quadlet documentation
 
 [podman-systemd.unit - systemd units using Podman Quadlet](https://docs.podman.io/en/latest/markdown/podman-systemd.unit.5.html#podman-rootful-unit-search-path)
+
+[Make systemd better for Podman with Quadlet - Red Hat](https://www.redhat.com/en/blog/quadlet-podman)
+
+---
+
+You are free to use any of these configurations, as long as you agree that THESE FILES ARE PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THESE FILES OR THE USE OR OTHER DEALINGS WITH THESE FILES.
