@@ -1,6 +1,6 @@
 # Quadlets
 
-Collection with some of my Quadlet configuration files, or modifications of configurations found on the internet. 
+Collection with some of my Quadlet configuration files, or modifications of configurations found on the internet.
 
 Feel free to contribute if you wrote a better implementation, some things like podman secrets may not have been added yet.
 
@@ -9,6 +9,11 @@ Feel free to contribute if you wrote a better implementation, some things like p
 - Nextcloud (Apache) [View ↗](./nextcloud-apache)
 - Nextcloud (Caddy) [View ↗](./nextcloud-caddy)
 - Technitium [View ↗](./technitium-dns)
+- Crafty [View ↗](./crafty)
+
+## Container directory
+
+The default quadlet container directory for a rootless system is `~/.config/containers/systemd/`. For all system-wide directories, you should take a look at [the documentation](https://docs.podman.io/en/latest/markdown/podman-systemd.unit.5.html#podman-rootful-unit-search-path).
 
 ## Fixing Quadlet errors
 

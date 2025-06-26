@@ -18,7 +18,7 @@ I run these containers as a seperate Nextcloud user, so the containers are named
 
 5. Start the nextcloud-pod service by running `systemd --user start nextcloud-pod.service`
 
-After adding port `5080/tcp` it to your firewall configuration, you now have a running Nextcloud container on port 5080. It will automatically start on every boot from now on.
+After adding port `5080/tcp` to your firewall configuration, you now have a running Nextcloud container on port 5080. It will automatically start on every boot from now on.
 
 ## Sources
 

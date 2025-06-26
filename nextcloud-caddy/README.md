@@ -12,7 +12,7 @@ I run these containers as a seperate Nextcloud user, so the containers are named
 
 2. Create the necessary directories, in its default configuration run `mkdir ~/{caddy,data,db,html}`
 
-3. Place the [Caddyfile](./caddy/Caddyfile) in the created `caddy` directory and create an  empty subdirectory called `caddy_data` as mountpoint for caddy.
+3. Place the [Caddyfile](./caddy/Caddyfile) in the created `caddy` directory and create an empty subdirectory called `caddy_data` as mountpoint for caddy.
 
 4. Place all files from the [containers](./containers) directory in `~/.config/containers/systemd` (or the corresponding [system directory](https://docs.podman.io/en/latest/markdown/podman-systemd.unit.5.html#podman-rootful-unit-search-path) when running rootful)
 
@@ -20,7 +20,7 @@ I run these containers as a seperate Nextcloud user, so the containers are named
 
 6. Start the nextcloud-pod service by running `systemd --user start nextcloud-pod.service`
 
-After adding port `5080/tcp` it to your firewall configuration, you now have a running Nextcloud container on port 5080. It will automatically start on every boot from now on.
+After adding port `5080/tcp` to your firewall configuration, you now have a running Nextcloud container on port 5080. It will automatically start on every boot from now on.
 
 ## Sources
 
